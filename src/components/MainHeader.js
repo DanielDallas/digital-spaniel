@@ -30,7 +30,7 @@ const Header = () => {
         <div className="flex items-center">
           <img
             className="w-8 h-8 mr-2"
-            src="./logo.png"
+            src="logo.png"
             alt="Digital Spaniel Agency"
           />
           {/* <span className="font-bold text-white">Logo</span> */}
