@@ -1,22 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
+import logo from './logo.png';
 
 const Header = () => {
   const [scrollDirection, setScrollDirection] = useState('up');
   const [prevScrollPos, setPrevScrollPos] = useState(0);
 
-  const handleScroll = () => {
-    const currentScrollPos = window.pageYOffset;
+  const handleScroll = useCallback(() => {
+    const currentScrollPos = window.scrollY;
     setScrollDirection(prevScrollPos > currentScrollPos ? 'up' : 'down');
     setPrevScrollPos(currentScrollPos);
-  };
+  }, [prevScrollPos]);
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    const scrollListener = () => handleScroll();
+
+    window.addEventListener('scroll', scrollListener);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', scrollListener);
     };
-  }, []);
+  }, [handleScroll]);
 
   return (
     <header
@@ -28,8 +31,8 @@ const Header = () => {
         <div className="flex items-center">
           <img
             className="w-8 h-8 mr-2"
-            src="src/DigitalSpaniellogo.png"
-            alt="Logo"
+            src={logo}
+            alt="Digital Spaniel Agency"
           />
           {/* <span className="font-bold text-white">Logo</span> */}
         </div>

@@ -20,7 +20,7 @@ const HeroSection = () => {
             </div>
           </div>
           <div className="w-1/2">
-            <div className="h-screen bg-cover bg-center" style={{ backgroundImage: "url('/path/to/image.jpg')" }}></div>
+            <div className="h-screen bg-cover bg-center" style={{ backgroundImage: "url('src/Spaniel-hero-bg.png')" }}></div>
           </div>
         </div>
       </div>
