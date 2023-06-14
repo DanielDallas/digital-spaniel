@@ -1,0 +1,11 @@
+module.exports = {
+      theme: {
+      extend: {
+        backgroundImage: (theme) => ({
+          hero: "url('/public/assets/img/Spaniel-hero-bg.png')",
+        }),
+      },
+    },
+    variants: {},
+    plugins: [],
+  };
