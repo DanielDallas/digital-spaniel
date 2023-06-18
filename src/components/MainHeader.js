@@ -1,5 +1,6 @@
 // import React, { useEffect, useState, useCallback } from 'react';
 import React from 'react';
+import logo from './images/logo.png';
 
 const Header = () => {
 //   const [scrollDirection, setScrollDirection] = useState('up');
@@ -31,7 +32,7 @@ const Header = () => {
         <div className="flex items-center">
           <img
             className="w-8 h-8 mr-2"
-            src="./images/logo.png"
+            src={logo}
             alt="Digital Spaniel Agency"
           />
           {/* <span className="font-bold text-white">Logo</span> */}
