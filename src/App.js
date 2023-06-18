@@ -1,12 +1,10 @@
 import React from 'react';
-import MainHeader from './components/MainHeader';
-import HeroSection from './components/HeroSection';
+import HeaderHero from './components/HeaderHero';
 
 const App = () => {
   return (
     <div>
-      <MainHeader />
-      <HeroSection />
+      <HeaderHero />
       {/* Add more sections/components here */}
     </div>
   );
