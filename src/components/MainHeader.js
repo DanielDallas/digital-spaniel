@@ -38,8 +38,13 @@ const Header = () => {
         <nav>
           <ul className="flex space-x-4">
             <li>
-              <a href="#home" className="text-white">
-                Home
+              <a href="#services" className="text-white">
+                Services
+              </a>
+            </li>
+            <li>
+              <a href="#work" className="text-white">
+                Work
               </a>
             </li>
             <li>
@@ -48,8 +53,8 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <a href="#services" className="text-white">
-                Services
+              <a href="#blog" className="text-white">
+                Blog
               </a>
             </li>
             <li>
