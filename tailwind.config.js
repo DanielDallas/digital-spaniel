@@ -8,6 +8,7 @@ module.exports = {
       colors: {
         'spaniel': '#C0345E',
         'spaniel-white': '#ffffff',
+        'off-bg': '#EDEFF1'
       },
     }
   }

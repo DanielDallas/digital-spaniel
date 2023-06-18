@@ -40,7 +40,7 @@ export default function HeroSection() {
               <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
-          <div className="hidden lg:flex lg:gap-x-12 mr-40">
+          <div className="hidden lg:flex lg:gap-x-12 mr-28">
             {navigation.map((item) => (
               <a key={item.name} href={item.href} className="text-sm font-normal leading-6 active:underline text-white">
                 {item.name}
@@ -103,17 +103,17 @@ export default function HeroSection() {
             }}
           />
         </div>
-        <div className="w-1/2 max-w-2xl pl-24 py-10 sm:py-20 lg:py-40 ">
+        <div className="w-1/2 pl-24 py-10 sm:py-20 lg:py-40 ">
           <div className="hidden sm:mb-8 sm:flex">
-            <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-            BRAND, DEV, ECOM, MARKETING{' '}
+            <div className="relative px-3 py-1 text-sm leading-6 text-spaniel">
+            BRAND, DEV, ECOM, MARKETING
             </div>
           </div>
           <div className="">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl lg:pr-8">
-            We unleash business potential
+            <h1 className="text-5xl font-semibold text-gray-900">
+            We unleash <br /><span className="text-gray-900/75">business potential</span>
             </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600 lg:pr-8">
+            <p className="mt-6 text-lg leading-8 text-gray-600 pr-40">
             We create brand experiences which are memorable and distinct. Our experienced team create and develop brands with personality and resonance.
             </p>
             <div className="mt-10 flex gap-x-6">
@@ -124,14 +124,15 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className = "w-1/2 lg:-mt-40">
+        <div className = "w-1/2 -mt-40">
           <img 
           src={herobg}
           alt="HeroImg"
+          className="w-6/12 absolute right-0 top-0"
           />
-
-
         </div>
+
+
         <div
           className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
           aria-hidden="true"
