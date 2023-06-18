@@ -1,30 +1,31 @@
-import React, { useEffect, useState, useCallback } from 'react';
+// import React, { useEffect, useState, useCallback } from 'react';
+import React from 'react';
 
 const Header = () => {
-  const [scrollDirection, setScrollDirection] = useState('up');
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
+//   const [scrollDirection, setScrollDirection] = useState('up');
+//   const [prevScrollPos, setPrevScrollPos] = useState(0);
 
-  const handleScroll = useCallback(() => {
-    const currentScrollPos = window.scrollY;
-    setScrollDirection(prevScrollPos > currentScrollPos ? 'up' : 'down');
-    setPrevScrollPos(currentScrollPos);
-  }, [prevScrollPos]);
+//   const handleScroll = useCallback(() => {
+//     const currentScrollPos = window.scrollY;
+//     setScrollDirection(prevScrollPos > currentScrollPos ? 'up' : 'down');
+//     setPrevScrollPos(currentScrollPos);
+//   }, [prevScrollPos]);
 
-  useEffect(() => {
-    const scrollListener = () => handleScroll();
+//   useEffect(() => {
+//     const scrollListener = () => handleScroll();
 
-    window.addEventListener('scroll', scrollListener);
+//     window.addEventListener('scroll', scrollListener);
 
-    return () => {
-      window.removeEventListener('scroll', scrollListener);
-    };
-  }, [handleScroll]);
+//     return () => {
+//       window.removeEventListener('scroll', scrollListener);
+//     };
+//   }, [handleScroll]);
 
   return (
     <header
-      className={`${
-        scrollDirection === 'down' ? 'fixed top-0 slide-in' : 'slide-out'
-      } z-10 w-full`}
+      // className={`${
+      //   scrollDirection === 'down' ? 'fixed top-0 slide-in' : 'slide-out'
+      // } z-10 w-full`}
     >
       <div className="container flex items-center justify-between mx-auto py-4">
         <div className="flex items-center">
