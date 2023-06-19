@@ -1,33 +1,56 @@
-import { useState } from 'react'
-import { Dialog } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import logo from './images/logo.png';
-import herobg from './images/herobg.png';
-
+import { useEffect, useState, useCallback } from "react";
+import { Dialog } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import logo from "./images/logo.png";
+import herobg from "./images/herobg.png";
 
 const navigation = [
-  { name: 'Services', href: '/' },
-  { name: 'Work', href: '#work' },
-  { name: 'About', href: '#about' },
-  { name: 'Blog', href: '#blog' },
-  { name: 'Contact', href: '#contact' },
-]
+  { name: "Services", href: "/" },
+  { name: "Work", href: "#work" },
+  { name: "About", href: "#about" },
+  { name: "Blog", href: "#blog" },
+  { name: "Contact", href: "#contact" },
+];
 
 export default function HeroSection() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const [scrollDirection, setScrollDirection] = useState("up");
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+
+  const handleScroll = useCallback(() => {
+    const currentScrollPos = window.scrollY;
+    setScrollDirection(prevScrollPos > currentScrollPos ? "up" : "down");
+    setPrevScrollPos(currentScrollPos);
+  }, [prevScrollPos]);
+
+  useEffect(() => {
+    const scrollListener = () => handleScroll();
+
+    window.addEventListener("scroll", scrollListener);
+
+    return () => {
+      window.removeEventListener("scroll", scrollListener);
+    };
+  }, [handleScroll]);
 
   return (
     <div className="bg-white">
-      <header className="absolute inset-x-0 top-0 z-50">
-        <nav className="flex items-center justify-between p-4 lg:px-4" aria-label="Global">
+      <header
+        className={`${
+          scrollDirection === "down"
+            ? "fixed slide-in bg-off-bg text-black font-bold"
+            : "absolute bg-transparent"
+        } top-0 z-50 w-full transition-all duration-1000 ease-in-out text-white`}
+      >
+        <nav
+          className="flex items-center justify-between p-4 lg:px-4"
+          aria-label="Global"
+        >
           <div className="flex lg:flex-1">
             <a href="#digital-spaniel" className="-m-1.5 p-1.5">
               <span className="sr-only">Digital Spaniel</span>
-              <img
-                className="pl-24 h-16 w-auto"
-                src={logo}
-                alt=""
-              />
+              <img className="pl-24 h-16 w-auto" src={logo} alt="" />
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -42,23 +65,28 @@ export default function HeroSection() {
           </div>
           <div className="hidden lg:flex lg:gap-x-12 mr-28">
             {navigation.map((item) => (
-              <a key={item.name} href={item.href} className="text-sm font-normal leading-6 active:underline text-white">
+              <a
+                key={item.name}
+                href={item.href}
+                className="text-sm font-normal leading-6 hover:underline hover:decoration-2 hover:underline-offset-8"
+              >
                 {item.name}
               </a>
             ))}
           </div>
         </nav>
-        <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+        <Dialog
+          as="div"
+          className="lg:hidden"
+          open={mobileMenuOpen}
+          onClose={setMobileMenuOpen}
+        >
           <div className="fixed inset-0 z-50" />
           <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
               <a href="#url" className="-m-1.5 p-1.5">
                 <span className="sr-only">Digital Spaniel</span>
-                <img
-                  className="h-10 w-auto"
-                  src={logo}
-                  alt=""
-                />
+                <img className="h-10 w-auto" src={logo} alt="" />
               </a>
               <button
                 type="button"
@@ -88,8 +116,6 @@ export default function HeroSection() {
         </Dialog>
       </header>
 
-
-
       <div className="relative isolate px-6 pt-14 lg:px-8 flex flex-col lg:flex-row">
         <div
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -99,39 +125,44 @@ export default function HeroSection() {
             className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
             style={{
               clipPath:
-                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+                "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
             }}
           />
         </div>
         <div className="w-1/2 pl-24 py-10 sm:py-20 lg:py-40 ">
           <div className="hidden sm:mb-8 sm:flex">
             <div className="relative px-3 py-1 text-sm leading-6 text-spaniel">
-            BRAND, DEV, ECOM, MARKETING
+              BRAND, DEV, ECOM, MARKETING
             </div>
           </div>
           <div className="">
             <h1 className="text-5xl font-semibold text-gray-900">
-            We unleash <br /><span className="text-gray-900/75">business potential</span>
+              We unleash <br />
+              <span className="text-gray-900/75">business potential</span>
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600 pr-40">
-            We create brand experiences which are memorable and distinct. Our experienced team create and develop brands with personality and resonance.
+              We create brand experiences which are memorable and distinct. Our
+              experienced team create and develop brands with personality and
+              resonance.
             </p>
             <div className="mt-10 flex gap-x-6">
-              <a href="#getintouch" className="text-sm font-semibold leading-6 text-gray-900 decoration-2 underline underline-offset-8 decoration-spaniel">
-                Lets Talk
+              <a
+                href="#getintouch"
+                className="text-sm font-semibold leading-6 text-gray-900 decoration-2 underline underline-offset-8 decoration-spaniel hover:decoration-dotted"
+              >
+                Let's Talk
               </a>
             </div>
           </div>
         </div>
 
-        <div className = "w-1/2 -mt-40">
-          <img 
-          src={herobg}
-          alt="HeroImg"
-          className="w-6/12 absolute right-0 top-0"
+        <div className="w-1/2 -mt-40">
+          <img
+            src={herobg}
+            alt="HeroImg"
+            className="w-6/12 absolute right-0 top-0"
           />
         </div>
-
 
         <div
           className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
@@ -141,11 +172,11 @@ export default function HeroSection() {
             className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
             style={{
               clipPath:
-                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+                "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
             }}
           />
         </div>
       </div>
     </div>
-  )
+  );
 }
