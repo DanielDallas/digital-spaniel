@@ -32,8 +32,8 @@ export default function Testimonies() {
       </div>
 
       <div className="w-full py-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto">
+        <div className="max-w-5xl	 mx-auto">
+          <div className="max-w-7xl mx-auto">
             <Carousel
               showArrows={false}
               showStatus={false}
@@ -47,13 +47,13 @@ export default function Testimonies() {
                 const { id, content, photo, name, title } = testimony;
                 const cardBgColor =
                   index % 2 === 0
-                    ? "bg-spaniel-blue text-spaniel-white"
-                    : "bg-gray-200";
+                    ? "bg-spaniel-blue text-white"
+                    : "bg-spaniel-gray";
                 return (
                   <div key={id} className="p-4">
                     <div className={`p-4 shadow-lg rounded-lg ${cardBgColor}`}>
                       <div className="px-4 py-5 sm:p-6">
-                        <p className="text-base text-gray-500">{content}</p>
+                        <p className="text-base italic">{content}</p>
                       </div>
                       <div className="flex items-center justify-center p-4">
                         <div className="thumbnail">
