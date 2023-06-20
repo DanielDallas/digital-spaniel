@@ -4,22 +4,22 @@
       "id": 1,
       "name": "Paul Simon",
       "title": "Founder, Megacorp",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "photo": "john-doe.jpg"
+      "content": "Working with Digital Spaniel has been a breath of fresh air. Their approach and attitude kept me informed and included from the start. Super pleased with the end results too!",
+      "photo": "testimonial_face03.png"
     },
     {
       "id": 2,
-      "name": "Jane Smith",
-      "title": "Marketing Manager",
-      "content": "Praesent eget augue ut odio accumsan consequat.",
-      "photo": "jane-smith.jpg"
+      "name": "John B. Goode",
+      "title": "CEO, Getting Things Done",
+      "content": "Advice and support from DigiSpan was second to none. Always willing to help and offer advice and solutions. A very good and rapid understanding of our requirements was key to this.",
+      "photo": "testimonial_face01.png"
     },
     {
       "id": 3,
-      "name": "Alice Johnson",
-      "title": "Designer",
-      "content": "Vestibulum fermentum tellus a ante auctor, at cursus erat faucibus.",
-      "photo": "alice-johnson.jpg"
+      "name": "Mary Jane",
+      "title": "CEO, Design Matters",
+      "content": "We needed a creative and unique brand which could compete against established products. Digital Spaniel delivered in spades and we’ve seen a huge response to the product launch.",
+      "photo": "testimonial_face02.png"
     }
   ]
 }

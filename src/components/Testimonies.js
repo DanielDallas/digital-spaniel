@@ -4,21 +4,6 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 export default function Testimonies() {
-  // const [testimonies, setTestimonies] = useState([]);
-
-  // useEffect(() => {
-  //   fetchTestimonies();
-  // }, []);
-
-  // const fetchTestimonies = async () => {
-  //   try {
-  //     const response = await fetch("./testimony.json");
-  //     const data = await response.json();
-  //     setTestimonies(data);
-  //   } catch (error) {
-  //     console.error("Error fetching testimonies from testimony.json:", error);
-  //   }
-  // };
   const [testimonies, setTestimonies] = useState([]);
 
   const getData = () => {
@@ -27,10 +12,10 @@ export default function Testimonies() {
       redirect: "follow",
     };
 
-    fetch("http://localhost:3000/testimonies", requestOptions)
+    fetch("http://localhost:3031/testimonies", requestOptions)
       .then((response) => response.json())
       .then((result) => setTestimonies(result))
-      .catch((error) => console.log("error", error));
+      .catch((error) => console.log("Error fetching JSON data", error));
   };
 
   useEffect(() => {
@@ -90,7 +75,7 @@ export default function Testimonies() {
                 >
                   <div className="px-4 py-5 sm:p-6 flex items-center">
                     <img
-                      src={`./data/photos/${testimony.photo}`}
+                      src={`./${testimony.photo}`}
                       alt={testimony.name}
                       className="w-12 h-12 rounded-full mr-4"
                     />
