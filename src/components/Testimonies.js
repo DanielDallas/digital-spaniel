@@ -12,11 +12,11 @@ export default function Testimonies() {
 
   const fetchTestimonies = async () => {
     try {
-      const response = await fetch("testimonials.json");
+      const response = await fetch("./testimony.json");
       const data = await response.json();
       setTestimonies(data);
     } catch (error) {
-      console.error("Error fetching testimonies:", error);
+      console.error("Error fetching testimonies from testimony.json:", error);
     }
   };
 
