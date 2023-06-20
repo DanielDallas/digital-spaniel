@@ -12,7 +12,7 @@ export default function Testimonies() {
 
   const fetchTestimonies = async () => {
     try {
-      const response = await fetch("./testimonials.JSON");
+      const response = await fetch("testimonials.json");
       const data = await response.json();
       setTestimonies(data);
     } catch (error) {
