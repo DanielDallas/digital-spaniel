@@ -4,21 +4,38 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 export default function Testimonies() {
+  // const [testimonies, setTestimonies] = useState([]);
+
+  // useEffect(() => {
+  //   fetchTestimonies();
+  // }, []);
+
+  // const fetchTestimonies = async () => {
+  //   try {
+  //     const response = await fetch("./testimony.json");
+  //     const data = await response.json();
+  //     setTestimonies(data);
+  //   } catch (error) {
+  //     console.error("Error fetching testimonies from testimony.json:", error);
+  //   }
+  // };
   const [testimonies, setTestimonies] = useState([]);
 
-  useEffect(() => {
-    fetchTestimonies();
-  }, []);
+  const getData = () => {
+    var requestOptions = {
+      method: "GET",
+      redirect: "follow",
+    };
 
-  const fetchTestimonies = async () => {
-    try {
-      const response = await fetch("./testimony.json");
-      const data = await response.json();
-      setTestimonies(data);
-    } catch (error) {
-      console.error("Error fetching testimonies from testimony.json:", error);
-    }
+    fetch("http://localhost:3000/testimonies", requestOptions)
+      .then((response) => response.json())
+      .then((result) => setTestimonies(result))
+      .catch((error) => console.log("error", error));
   };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <div>

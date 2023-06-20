@@ -1,0 +1,25 @@
+{
+  "testimonies": [
+    {
+      "id": 1,
+      "name": "Paul Simon",
+      "title": "Founder, Megacorp",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "photo": "john-doe.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "title": "Marketing Manager",
+      "content": "Praesent eget augue ut odio accumsan consequat.",
+      "photo": "jane-smith.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Alice Johnson",
+      "title": "Designer",
+      "content": "Vestibulum fermentum tellus a ante auctor, at cursus erat faucibus.",
+      "photo": "alice-johnson.jpg"
+    }
+  ]
+}
