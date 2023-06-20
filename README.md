@@ -1,5 +1,3 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/e0b130b4-cbe1-489c-80db-92c7560c70f6/deploy-status)](https://app.netlify.com/sites/splendid-nougat-3f95e1/deploys)
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
