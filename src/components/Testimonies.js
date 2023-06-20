@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import TestimonyPhoto from "./testimonial_face01.png";
 
 export default function Testimonies() {
   const [testimonies, setTestimonies] = useState([]);
@@ -32,7 +33,7 @@ export default function Testimonies() {
       </div>
 
       <div className="w-full py-6">
-        <div className="max-w-5xl	 mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="max-w-7xl mx-auto">
             <Carousel
               showArrows={false}
@@ -44,7 +45,7 @@ export default function Testimonies() {
               centerSlidePercentage={33.33}
             >
               {testimonies.map((testimony, index) => {
-                const { id, content, photo, name, title } = testimony;
+                const { id, content, name, title } = testimony;
                 const cardBgColor =
                   index % 2 === 0
                     ? "bg-spaniel-blue text-white"
@@ -52,13 +53,21 @@ export default function Testimonies() {
                 return (
                   <div key={id} className="p-4">
                     <div className={`p-4 shadow-lg rounded-lg ${cardBgColor}`}>
-                      <div className="px-4 py-5 sm:p-6">
-                        <p className="text-base italic">{content}</p>
+                      <div className="relative">
+                        {/* <div className="absolute -top-4 left-4 text-5xl text-gray-300">
+                          &ldquo;
+                        </div>
+                        <div className="absolute -bottom-4 right-4 text-5xl text-gray-300">
+                          &rdquo;
+                        </div> */}
+                        <div className="px-4 py-5 sm:p-6">
+                          <p className="text-base italic">{content}</p>
+                        </div>
                       </div>
                       <div className="flex items-center justify-center p-4">
                         <div className="thumbnail">
                           <img
-                            src={`./${photo}`}
+                            src={TestimonyPhoto}
                             alt={name}
                             className="rounded-full"
                           />
