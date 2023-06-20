@@ -2,17 +2,17 @@
   "testimonies": [
     {
       "id": 1,
-      "name": "Paul Simon",
-      "title": "Founder, Megacorp",
-      "content": "Working with Digital Spaniel has been a breath of fresh air. Their approach and attitude kept me informed and included from the start. Super pleased with the end results too!",
-      "photo": "testimonial_face03.png"
-    },
-    {
-      "id": 2,
       "name": "John B. Goode",
       "title": "CEO, Getting Things Done",
       "content": "Advice and support from DigiSpan was second to none. Always willing to help and offer advice and solutions. A very good and rapid understanding of our requirements was key to this.",
       "photo": "testimonial_face01.png"
+    },
+    {
+      "id": 2,
+      "name": "Paul Simon",
+      "title": "Founder, Megacorp",
+      "content": "Working with Digital Spaniel has been a breath of fresh air. Their approach and attitude kept me informed and included from the start. Super pleased with the end results too!",
+      "photo": "testimonial_face03.png"
     },
     {
       "id": 3,

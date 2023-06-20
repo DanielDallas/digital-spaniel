@@ -9,6 +9,8 @@ module.exports = {
       colors: {
         spaniel: "#C0345E",
         "spaniel-white": "#ffffff",
+        "spaniel-blue": "#19293A",
+        "spaniel-gray": "#E2E4E6",
         "off-bg": "#EDEFF1",
       },
     },
