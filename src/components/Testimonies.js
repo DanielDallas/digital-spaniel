@@ -42,6 +42,32 @@ export default function Testimonies() {
               swipeable={true}
               centerMode={true}
               centerSlidePercentage={33.33}
+              renderIndicator={(onClickHandler, isSelected, index, label) => {
+                if (isSelected) {
+                  return (
+                    <li
+                      key={index}
+                      className="selected-dot"
+                      style={{ width: "12px", height: "12px" }}
+                      aria-label={`Selected: ${label} ${index + 1}`}
+                      title={`Selected: ${label} ${index + 1}`}
+                    />
+                  );
+                }
+                return (
+                  <li
+                    key={index}
+                    style={{ width: "8px", height: "8px" }}
+                    onClick={onClickHandler}
+                    onKeyDown={onClickHandler}
+                    value={index}
+                    role="button"
+                    tabIndex={0}
+                    title={`${label} ${index + 1}`}
+                    aria-label={`${label} ${index + 1}`}
+                  />
+                );
+              }}
             >
               {testimonies.map((testimony, index) => {
                 const { id, content, photo, name, title } = testimony;
@@ -52,11 +78,13 @@ export default function Testimonies() {
                         <p className="text-base text-gray-500">{content}</p>
                       </div>
                       <div className="flex items-center justify-center p-4">
-                        <img
-                          src={`./data/photos/${photo}`}
-                          alt={name}
-                          className="w-20 h-20 rounded-full"
-                        />
+                        <div className="thumbnail">
+                          <img
+                            src={`./${photo}`}
+                            alt={name}
+                            className="rounded-full"
+                          />
+                        </div>
                       </div>
                       <div className="px-4 pb-4 sm:p-6">
                         <h3 className="text-lg leading-6 font-medium text-gray-900">
