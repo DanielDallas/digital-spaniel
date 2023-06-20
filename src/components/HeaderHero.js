@@ -39,7 +39,7 @@ export default function HeroSection() {
       <header
         className={`${
           scrollDirection === "down"
-            ? "fixed slide-in bg-off-bg text-black font-bold"
+            ? "fixed slide-in bg-off-bg text-slate-700 font-semibold"
             : "absolute bg-transparent"
         } top-0 z-50 w-full transition-all duration-1000 ease-in-out text-white`}
       >

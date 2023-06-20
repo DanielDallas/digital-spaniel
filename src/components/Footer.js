@@ -8,8 +8,8 @@ import {
 export default function Footer() {
   return (
     <footer>
-      <div className="relative isolate px-6 pt-14 lg:px-8 flex flex-col lg:flex-row bg-off-bg">
-        <div className="w-2/5 pl-24 py-10 sm:py-20 lg:py-40">
+      <div className="relative isolate lg:py-16 px-6 pt-14 lg:px-8 flex flex-col lg:flex-row bg-off-bg">
+        <div className="w-2/5 pl-24">
           <h1 className="text-3xl font-semibold text-gray-900 mb-24">
             We're a brands <br />
             <span className="text-gray-900/75">best friend</span>
@@ -24,7 +24,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="w-3/5 pl-24 pt-10 sm:pt-20 lg:pt-10 ">
+        <div className="w-3/5 pl-24 ">
           <div className="flex flex-col lg:flex-row">
             <div className="w-4/12">
               <p className="font-semibold mb-2">EXLORE</p>
