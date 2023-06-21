@@ -6,40 +6,48 @@ import {
   Tab,
   TabPanel,
 } from "@material-tailwind/react";
+import ProjectPhoto1 from "./images/project1.png";
+import ProjectPhoto2 from "./images/project2.png";
+import ProjectPhoto3 from "./images/project3.png";
+import ProjectPhoto4 from "./images/project4.png";
 
 export default function RecentProjects() {
-  const [activeTab, setActiveTab] = React.useState("html");
   const data = [
     {
       label: "All",
       value: "all",
-      desc: `It really matters and then like it really doesn't matter.
-      What matters is the people who are sparked by it. And the people 
-      who are like offended by it, it doesn't matter.`,
+      images: [ProjectPhoto1, ProjectPhoto2, ProjectPhoto3, ProjectPhoto4],
     },
     {
       label: "Branding",
       value: "branding",
-      desc: `Because it's about motivating the doers. Because I'm here
-      to follow my dreams and inspire other people to follow their dreams, too.`,
+      images: [ProjectPhoto1, ProjectPhoto2, ProjectPhoto3],
     },
     {
       label: "Web design",
       value: "web",
-      desc: `We're not always in the position that we want to be at.
-      We're constantly growing. We're constantly making mistakes. We're
-      constantly trying to express ourselves and actualize our dreams.`,
+      images: [ProjectPhoto4, ProjectPhoto1],
     },
     {
       label: "Digital Marketing",
       value: "dmarketing",
-      desc: `Because it's about motivating the doers. Because I'm here
-      to follow my dreams and inspire other people to follow their dreams, too.`,
+      images: [ProjectPhoto1, ProjectPhoto2, ProjectPhoto3, ProjectPhoto4],
     },
   ];
+
+  const [activeTab, setActiveTab] = React.useState(data[0].value);
+
+  const shuffleImages = (images) => {
+    for (let i = images.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [images[i], images[j]] = [images[j], images[i]];
+    }
+    return images;
+  };
+
   return (
     <div>
-      <div className="lg:w-8/12 lg:pl-28 sm:pl-6 py-10 sm:py-20 lg:py-20 ">
+      <div className="lg:w-8/12 lg:pl-28 sm:pl-6 py-10 sm:py-20 lg:py-20">
         <h1 className="text-3xl font-semibold text-gray-900">
           Some of our <br />
           <span className="text-gray-900/75">Recent Projects</span>
@@ -69,11 +77,24 @@ export default function RecentProjects() {
             ))}
           </TabsHeader>
           <TabsBody>
-            {data.map(({ value, desc }) => (
-              <TabPanel key={value} value={value}>
-                {desc}
-              </TabPanel>
-            ))}
+            {data.map(({ value, images }) => {
+              const shuffledImages = shuffleImages(images);
+              return (
+                <TabPanel key={value} value={value}>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+                    {shuffledImages.map((imageUrl, index) => (
+                      <div key={index}>
+                        <img
+                          src={imageUrl}
+                          alt="Recent Project"
+                          className="w-full h-auto object-cover rounded"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </TabPanel>
+              );
+            })}
           </TabsBody>
         </Tabs>
       </div>
