@@ -9,12 +9,12 @@ export default function Footer() {
   return (
     <footer>
       <div className="relative isolate lg:py-16 px-6 pt-14 lg:px-8 flex flex-col lg:flex-row bg-off-bg">
-        <div className="w-2/5 pl-24">
+        <div className="lg:w-2/5 lg:pl-24">
           <h1 className="text-3xl font-semibold text-gray-900 mb-24">
             We're a brands <br />
             <span className="text-gray-900/75">best friend</span>
           </h1>
-          <div className="mt-10 flex gap-x-6">
+          <div className="lg:mt-10 sm:-mt-16 flex gap-x-6">
             <a
               href="#getintouch"
               className="text-sm font-semibold leading-6 text-gray-900 decoration-2 underline underline-offset-8 decoration-spaniel hover:decoration-dotted"
@@ -24,9 +24,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="w-3/5 pl-24 ">
-          <div className="flex flex-col lg:flex-row">
-            <div className="w-4/12">
+        <div className="lg:w-3/5 lg:pl-24 sm:py-10">
+          <div className="flex flex-col sm:flex-row lg:flex-row">
+            <div className="lg:w-4/12 sm:w-1/2">
               <p className="font-semibold mb-2">EXLORE</p>
               <ul className="leading-loose font-normal text-slate-500">
                 <li>
@@ -57,7 +57,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div className="w-4/12 -ml-20">
+            <div className="lg:w-4/12 lg:-ml-20 sm:w-1/2">
               <p className="font-semibold mb-2">SERVICES</p>
               <ul className="leading-loose font-normal text-slate-500">
                 <li>
@@ -78,7 +78,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div className="w-4/12 -ml-16">
+            <div className="lg:w-4/12 lg:-ml-16">
               <p className="font-semibold mb-2">QUESTION?</p>
               <p className="isolate font-medium mb-8">
                 Call Us
@@ -103,12 +103,12 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="w-full pb-8 relative isolate flex flex-col lg:flex-row bg-off-bg">
-        <div className="w-1/2 pl-24 py-1 sm:py-1 lg:py-1">
+      <div className="w-full pb-8 relative isolate flex flex-col sm:flex-row lg:flex-row bg-off-bg">
+        <div className="lg:w-1/2 sm:w-full sm:px-6 pl-24 py-1 sm:py-1 lg:py-1">
           Copyright © Digital Spaniel 2023. All rights reserved.
         </div>
 
-        <div className="w-1/2 lg:pl-60">
+        <div className="sm:flex-col-reverse lg:w-1/2 sm:px-6 pl-60">
           <span className="inline-block px-2">
             <FaFacebookF />
           </span>

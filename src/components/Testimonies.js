@@ -32,7 +32,7 @@ export default function Testimonies() {
         </h1>
       </div>
 
-      <div className="lg:w-full sm:px-6 sm:-mt-10 lg:py-6">
+      <div className="lg:w-full sm:px-6 lg:py-6">
         <div className="max-w-5xl mx-auto">
           <div className="max-w-7xl mx-auto">
             <Carousel
@@ -44,6 +44,24 @@ export default function Testimonies() {
               centerMode={true}
               centerSlidePercentage={100} // Set centerSlidePercentage to 100 for mobile view
               emulateTouch={true} // Add emulateTouch prop for mobile touch support
+              responsive={{
+                // Configure responsive settings
+                desktop: {
+                  breakpoint: { max: 3000, min: 1024 },
+                  items: 3,
+                  partialVisibilityGutter: 40,
+                },
+                tablet: {
+                  breakpoint: { max: 1024, min: 640 },
+                  items: 2,
+                  partialVisibilityGutter: 30,
+                },
+                mobile: {
+                  breakpoint: { max: 640, min: 0 },
+                  items: 1,
+                  partialVisibilityGutter: 20,
+                },
+              }}
             >
               {testimonies.map((testimony, index) => {
                 const { id, content, name, title } = testimony;
