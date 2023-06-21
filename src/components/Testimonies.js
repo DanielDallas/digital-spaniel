@@ -34,7 +34,7 @@ export default function Testimonies() {
 
       <div className="lg:w-full sm:px-6 lg:py-6">
         <div className="max-w-5xl mx-auto">
-          <div className="max-w-7xl mx-auto">
+          <div className="max-w-7xl mx-auto sm:hidden">
             <Carousel
               showArrows={false}
               showStatus={false}
@@ -42,22 +42,22 @@ export default function Testimonies() {
               infiniteLoop={true}
               swipeable={true}
               centerMode={true}
-              centerSlidePercentage={100} // Set centerSlidePercentage to 100 for mobile view
+              centerSlidePercentage={33.333} // Set centerSlidePercentage to 100 for mobile view
               emulateTouch={true} // Add emulateTouch prop for mobile touch support
               responsive={{
                 // Configure responsive settings
                 desktop: {
-                  breakpoint: { max: 3000, min: 1024 },
+                  breakpoint: { max: 3000, min: 800 },
                   items: 3,
                   partialVisibilityGutter: 40,
                 },
                 tablet: {
-                  breakpoint: { max: 1024, min: 640 },
+                  breakpoint: { max: 724, min: 400 },
                   items: 2,
                   partialVisibilityGutter: 30,
                 },
                 mobile: {
-                  breakpoint: { max: 640, min: 0 },
+                  breakpoint: { max: 390, min: 0 },
                   items: 1,
                   partialVisibilityGutter: 20,
                 },

@@ -57,7 +57,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div className="lg:w-4/12 lg:-ml-20 sm:w-1/2">
+            <div className="lg:w-4/12 lg:-ml-20 sm:ml-8 sm:w-1/2">
               <p className="font-semibold mb-2">SERVICES</p>
               <ul className="leading-loose font-normal text-slate-500">
                 <li>
@@ -78,7 +78,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div className="lg:w-4/12 lg:-ml-16">
+            <div className="lg:w-4/12 lg:-ml-16 sm:w-full">
               <p className="font-semibold mb-2">QUESTION?</p>
               <p className="isolate font-medium mb-8">
                 Call Us
