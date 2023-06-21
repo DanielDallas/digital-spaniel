@@ -24,7 +24,7 @@ export default function Testimonies() {
 
   return (
     <div>
-      <div className="w-1/2 pl-28 py-10 sm:py-20 lg:py-20 ">
+      <div className="lg:w-1/2 lg:pl-28 sm:pl-6 py-10 sm:py-20 lg:py-20 ">
         <h1 className="text-3xl font-semibold text-gray-900">
           Kind words
           <br />
@@ -32,7 +32,7 @@ export default function Testimonies() {
         </h1>
       </div>
 
-      <div className="w-full py-6">
+      <div className="lg:w-full sm:px-6 sm:-mt-10 lg:py-6">
         <div className="max-w-5xl mx-auto">
           <div className="max-w-7xl mx-auto">
             <Carousel
@@ -42,7 +42,8 @@ export default function Testimonies() {
               infiniteLoop={true}
               swipeable={true}
               centerMode={true}
-              centerSlidePercentage={33.33}
+              centerSlidePercentage={100} // Set centerSlidePercentage to 100 for mobile view
+              emulateTouch={true} // Add emulateTouch prop for mobile touch support
             >
               {testimonies.map((testimony, index) => {
                 const { id, content, name, title } = testimony;
