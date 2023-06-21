@@ -6,6 +6,10 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      screens: {
+        sm: { min: "350px", max: "1100px" },
+        // => @media (min-width: 640px and max-width: 767px) { ... }
+      },
       colors: {
         spaniel: "#C0345E",
         "spaniel-white": "#ffffff",

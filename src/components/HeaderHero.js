@@ -41,7 +41,7 @@ export default function HeroSection() {
           scrollDirection === "down"
             ? "fixed slide-in bg-off-bg text-inherit font-semibold"
             : "absolute bg-transparent"
-        } top-0 z-50 w-full transition-all duration-1000 ease-in-out text-white`}
+        } top-0 z-50 w-full transition-all duration-700 ease-in-out text-spaniel-gray`}
       >
         <nav
           className="flex items-center justify-between p-4 lg:px-4"
@@ -50,7 +50,7 @@ export default function HeroSection() {
           <div className="flex lg:flex-1">
             <a href="#digital-spaniel" className="-m-1.5 p-1.5">
               <span className="sr-only">Digital Spaniel</span>
-              <img className="pl-24 h-16 w-auto" src={logo} alt="" />
+              <img className="lg:pl-24 h-16 w-auto" src={logo} alt="" />
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -129,18 +129,18 @@ export default function HeroSection() {
             }}
           />
         </div>
-        <div className="w-1/2 pl-24 py-10 sm:py-20 lg:py-40 ">
-          <div className="hidden sm:mb-8 sm:flex">
+        <div className="sm:w-full w-1/2 lg:pl-24 py-10 sm:py-20 lg:py-40 ">
+          <div className="hidden sm:w-full sm:mb-8 sm:flex">
             <div className="relative px-3 py-1 text-sm leading-6 text-spaniel">
               BRAND, DEV, ECOM, MARKETING
             </div>
           </div>
           <div className="">
-            <h1 className="text-5xl font-semibold text-gray-900">
+            <h1 className="text-4xl font-semibold text-gray-900">
               We unleash <br />
               <span className="text-gray-900/75">business potential</span>
             </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600 pr-40">
+            <p className="mt-6 text-lg leading-7 text-gray-600 lg:pr-40">
               We create brand experiences which are memorable and distinct. Our
               experienced team create and develop brands with personality and
               resonance.
@@ -156,7 +156,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="w-1/2 -mt-40">
+        <div className="sm:hidden w-1/2 -mt-40">
           <img
             src={herobg}
             alt="HeroImg"
